@@ -11,10 +11,10 @@ Sample file is as below for GaN crystal
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 GaN Crystal (4 atom basis) # this line is only comment (1st line)
-1.0 # Lattice constant (adjusted by a vector) (2nd line)
-        3.18        0.000        0.00 # a1 (3rd line)
-       -1.59        2.754        0.00 # a2 (4th line)
-        0.000       0.000        5.166 # a3 (5th line)
+1.0 # Lattice constant (adjusted by a1, a2, a3 vectors) (2nd line)
+        3.18        0.000        0.00 # a1 in Angstrom (3rd line)
+       -1.59        2.754        0.00 # a2 in Angstrom (4th line)
+        0.000       0.000        5.166 # a3 in Angstrom (5th line)
    Ga    N  # atomic symbols (6th line)
     2    2  # unmber of atoms (7th line)
 Direct # Unit types Direct of Cartesian (only first character has meaning) (8th line)
@@ -23,10 +23,10 @@ Direct # Unit types Direct of Cartesian (only first character has meaning) (8th 
      0.333333348         0.666666697         0.385000000  # position of N
      0.666666615         0.333333305         0.885000000  # position of N
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Above file can also be written as changing line 2 and 
+Above file can also be written as
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-GaN Crystal (4 atom basis) # this line is only comment
-3.18 # Lattice constant (adjusted by a1, a2 and a3 vectors)
+GaN Crystal (4 atom basis) # this line is only comment 
+3.18 # Lattice constant, Angstrom (adjusted by a1, a2 and a3 vectors)
         1.0000    0.000000      0.0000 # a1
        -1.5000    0.866025      0.0000 # a2
         0.0000    0.000000      1.62453 # a3
@@ -39,7 +39,7 @@ Direct      # Unit types Direct of Cartesian (only first character has meaning)
      0.666666615         0.333333305         0.885000000  # position of N
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-PWscf input (only the crystal geometry part) of POSCAR file can be written as below:
+The equivalent PWscf input (only the crystal geometry part) of POSCAR file can be written as below:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 celldm(1) = 6.00933 ! 3.18/0.529177 in au.
 CELL_PARAMETERS {alat}
