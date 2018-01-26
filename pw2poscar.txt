@@ -1,0 +1,26 @@
+Way to convert PWscf input to POSCAR format so that VESTA can render it. first the format of POSCAR file:
+
+Line 1, just a comment about system or file itself
+line 2, Lattice constant in the unit of Angstrom.
+line 3, 4 and 5, primitive lattice vectors a1, a2 and a3 rowwise.
+line 6, Atomic symbols (at lease one white space required between them)
+line 7, number of atoms defined by symbol in line 6
+line 8, Direct (fractional coordinate according to primitive lattive vecotrs) OR Cartesian (Angstrom unit). Only the first character is important.
+From line 9 onwards write the position in the unit as defined in line 8.
+Sample file is as below for GaN crystal
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GaN Crystal (4 atom basis) # this line is only comment
+1.0 # Lattice constant (adjusted by a vector)
+        3.1800000668         0.0000000000         0.0000000000 # a1
+       -1.5900000334         2.7539608418         0.0000000000 # a2
+        0.0000000000         0.0000000000         5.1659998894 # a3
+   Ga    N  # atomic symbols
+    2    2  # unmber of atoms
+Direct      # Unit types Direct of Cartesian (only first character has meaning)
+     0.333333348         0.666666697         0.000000000  # position of Ga
+     0.666666615         0.333333305         0.500000000  # position of Ga
+     0.333333348         0.666666697         0.385000000  # position of N
+     0.666666615         0.333333305         0.885000000  # position of N
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
